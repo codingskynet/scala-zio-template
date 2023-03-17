@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package dev.zero_cost.scala_zio;
+
+option java_package = "dev.zero_cost.scala_zio";
+
+service ShortUrlService {
+  rpc Create(CreateRequest) returns (CreateResponse);
+
+  rpc Get(GetRequest) returns (GetResponse);
+}
+
+message CreateRequest {
+  string url = 1;
+}
+
+message CreateResponse {
+  string id = 1;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message GetResponse {
+  string url = 1;
+}
